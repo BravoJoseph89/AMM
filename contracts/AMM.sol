@@ -15,7 +15,7 @@ contract AMM {
 
     uint256 public token1Balance;
     uint256 public token2Balance;
-    uint256 public k;
+    uint256 public K;
 
     uint256 public totalShares;
     mapping(address => uint256) public shares;
@@ -67,7 +67,7 @@ contract AMM {
         // Manage Pool
         token1Balance += _token1Amount;
         token2Balance += _token2Amount;
-        k = token1Balance * token2Balance;
+        K = token1Balance * token2Balance;
 
         // Update Shares
         totalShares += share;
@@ -99,7 +99,7 @@ contract AMM {
         returns (uint256 token2Amount)
     {
         uint256 token1After = token1Balance + _token1Amount;
-        uint token2After = k / token1After;
+        uint token2After = K / token1After;
         token2Amount = token2Balance - token2After;
 
         // Don't let pool go to 0
@@ -143,12 +143,12 @@ contract AMM {
         returns (uint256 token1Amount)
     {
         uint256 token2After = token2Balance + _token2Amount;
-        uint token1After = k / token2After;
+        uint token1After = K / token2After;
         token1Amount = token1Balance - token1After;
 
         // Don't let pool go to 0
         if (token1Amount == token1Balance) {
-            token1Amount --;        
+            token1Amount--;        
         }
 
         require(token1Amount < token1Balance, "swap amount to large");
@@ -208,7 +208,7 @@ contract AMM {
 
         token1Balance -= token1Amount;
         token2Balance -= token2Amount;
-        k = token1Balance * token2Balance;
+        K = token1Balance * token2Balance;
 
         token1.transfer(msg.sender, token1Amount);
         token2.transfer(msg.sender, token2Amount);    
