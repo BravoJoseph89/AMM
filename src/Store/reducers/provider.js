@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const provider = createSlice({
-    name: `provider`,
+    name: 'provider',
     initialState: {
         connection: null,
         chainId: null,

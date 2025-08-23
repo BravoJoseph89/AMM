@@ -154,7 +154,7 @@ contract AMM {
         require(token1Amount < token1Balance, "swap amount to large");
     }
 
-    function swapToken2(uint256 _token2Amount) 
+    function swapToken2(uint256 _token2Amount)
         external
         returns(uint256 token1Amount)
     {
