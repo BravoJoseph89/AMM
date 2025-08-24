@@ -1,4 +1,4 @@
-import {useSelector,useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -42,7 +42,7 @@ const Navigation = () => {
       <Navbar.Brand href="#">Dapp University AMM</Navbar.Brand>
 
       <Navbar.Toggle aria-controls="nav" />
-      <Navbar.Collapse className="justify-content-end">
+      <Navbar.Collapse id="nav" className="justify-content-end">
         
         <div className="d-flex justify-content-end mt-3">
           
@@ -54,7 +54,7 @@ const Navigation = () => {
           >
             <option value="0" disabled>Select Network</option>
             <option value="0x7A69">Localhost</option>
-            <option value="0x5">Goerli</option>
+            <option value="0xaa36a7">Sepolia</option>
           </Form.Select>        
           
           {account ? (

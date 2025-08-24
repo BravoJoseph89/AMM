@@ -64,7 +64,6 @@ export const loadAMM = async (provider, chainId, dispatch) => {
 
 // ---------------------------------
 // LOAD BALANCES & SHARES
-
 export const loadBalances = async (amm, tokens, account, dispatch) => {
     const balance1 = await tokens[0].balanceOf(account)
     const balance2 = await tokens[1].balanceOf(account)

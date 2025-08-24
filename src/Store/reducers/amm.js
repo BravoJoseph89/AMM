@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const amm = createSlice({
-    name: `amm`,
+    name: 'amm',
     initialState: {
         contract: null,
         shares: 0,

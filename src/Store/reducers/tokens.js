@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const tokens = createSlice({
-    name: `tokens`,
+    name: 'tokens',
     initialState: {
         connection: [],
         symbols: [],
