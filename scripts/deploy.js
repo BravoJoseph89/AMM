@@ -22,7 +22,9 @@ async function main() {
   // Deploy AMM
   const AMM = await hre.ethers.getContractFactory('AMM')
   const amm = await AMM.deploy(dapp.address, usd.address)
-    console.log(`AMM contract deployed to: ${amm.address}\n`)
+
+  console.log(`AMM contract deployed to: ${amm.address}\n`)
+  
 }
 
 // We recommend this pattern to be able to use async/await everywhere
