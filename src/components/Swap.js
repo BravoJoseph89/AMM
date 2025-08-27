@@ -224,7 +224,6 @@ const Swap = () => {
                     variant={'success'}
                     setShowAlert={setShowAlert}
                 />
-
             ) : !isSuccess && showAlert ? (
                 <Alert
                     message={'Swap Failed'}
